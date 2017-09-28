@@ -1,10 +1,13 @@
+import math
+
+
 def discriminant():
     return pow(b, 2) - 4 * a * c
 
 
 def roots():
-    x1 = (- b + pow(discriminant(), 0.5)) / (2 * a)
-    x2 = (- b - pow(discriminant(), 0.5)) / (2 * a)
+    x1 = (- b + math.sqrt(discriminant())) / (2 * a)
+    x2 = (- b - math.sqrt(discriminant())) / (2 * a)
     if x1 != x2 :
         return [str(x1), str(x2)]
     else:
