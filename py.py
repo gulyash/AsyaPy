@@ -1,3 +1,19 @@
+def luhn_checksum(card_number):
+    def digits_of(n):
+        return [int(d) for d in str(n)]
+    digits = digits_of(card_number)
+    odd_digits = digits[-1::2]  # от -1 : до конца : с шагом 2
+    even_digits = digits[-2::2]
+    checksum = 0
+    checksum += sum(odd_digits)
+    for d in even_digits:
+        checksum += sum(digits_of(d*2))
+    return checksum % 10
+
+
+def is_luhn_valid(card_number):
+    return luhn_checksum(card_number) == 0
+
 
 cardNumOk = False
 
@@ -5,16 +21,11 @@ while not cardNumOk:
     print('Please, input your card number:')
     cardNum = input()
     cardNum = ''.join(cardNum.split())  # this removes spaces if there are any
-    if len(cardNum) == 16:
-        # check if it's a number
-        try:
-            cardNumInt = int(cardNum)  # this might throw an exception
-            print('Your card number is: ', ' '.join(cardNum[i:i + 4] for i in range(0, 16, 4)))
-            cardNumOk = True
-        except ValueError:
-            print('Not a number, try again')
+    if is_luhn_valid(cardNum):
+        print('Your card number is: ', ' '.join(cardNum[i:i + 4] for i in range(0, 16, 4)))
+        cardNumOk = True
     else:
-        print('Not 16 characters long, try again')
+        print('Not a valid card number (it was checked using Luhn algorithm). \nTry again.')
 
 cvvOk = False
 
