@@ -1,4 +1,4 @@
-x, y, r = map(float, input('Please input x and y: ',).split())
+x, y, r = map(float, input('Please input x, y and r: ',).split())
 if x*x + y*y <= r*r:
     print('The point belongs to the circle.')
 else:

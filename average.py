@@ -1,7 +1,5 @@
 print('Input 3 values:')
-a = int(input())
-b = int(input())
-c = int(input())
+a, b, c = map(int, input('Please input a, b and c: ',).split())
 
 if a == b or b == c or a == c:
     print('Error')
