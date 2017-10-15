@@ -1,6 +1,3 @@
-import math
-
-
 while True:
     print('Calculate 4.2 % 2. What is the answer?')
     answer = float(input())
