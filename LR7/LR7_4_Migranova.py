@@ -4,8 +4,8 @@ l = input("Введите список слов через пробел: ").spli
 
 
 def cut_list(list):
-    length = floor(log(len(l), 2))+1
-    return list[:length]
+    i = floor(log(len(list), 2))
+    return list[:2**i]
 
 
 print(cut_list(l))
