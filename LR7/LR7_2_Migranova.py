@@ -1,9 +1,9 @@
-s = input('Введите строку из 0 и 1:')
+s = input('Введите строку из 0 и 1: ')
 
 
-def binToDec(string):
+def bin_to_dec(string):
     # встроенная функция преобразования строку в целое число, второй агрумент - основание системы счисления
     return int(string, 2)
 
 
-print(binToDec(s))
+print(bin_to_dec(s))
