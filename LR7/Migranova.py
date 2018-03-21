@@ -14,6 +14,8 @@ def dec_to_bin(i):
 
 
 def cut_list(list):
-    i = floor(log(len(list), 2))
-    return list[:2**i]
+    return list[:2**k_num(list=list)]
 
+
+def k_num(list):
+    return floor(log(len(list), 2))
