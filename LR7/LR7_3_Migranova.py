@@ -1,4 +1,4 @@
-i = int(input('Введите строку из 0 и 1: '))
+i = int(input('Введите число: '))
 
 
 def dec_to_bin(i):
