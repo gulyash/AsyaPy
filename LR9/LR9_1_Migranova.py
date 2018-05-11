@@ -1,7 +1,10 @@
 import sqlite3
+import sys
 
+db_file_path = sys.argv[1]
+n = int(sys.argv[2])
 
-conn = sqlite3.connect('comp.db')
+conn = sqlite3.connect(db_file_path)
 cursor = conn.cursor()
 
 queries = [
@@ -19,8 +22,7 @@ def run_query(query):
     print(results)
 
 
-for query in queries:
-    run_query(query)
+run_query(queries[n])
 
 conn.close()
 
